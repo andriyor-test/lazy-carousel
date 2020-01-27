@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { format } from 'date-fns'
-import { DateMode } from './types'
+import { DateMode } from '../models/types'
 
 @Pipe({
   name: 'dateFns'
