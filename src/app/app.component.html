@@ -1,0 +1,14 @@
+<div style="margin: 2em" class="container">
+  <carousel-custom>
+    <ng-container *ngFor="let item of items;">
+      <ng-container *carouselItem>
+        <div class="item-custom" [attr.data-background]="item.src">
+          <div class="date-time">
+<!--            {{ item.title | date:item.mode }}-->
+            {{ item.title | dateFns:item.mode }}
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
+  </carousel-custom>
+</div>

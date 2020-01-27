@@ -1,0 +1,18 @@
+<div class="carousel-custom">
+  <button class="carousel__button--prev"
+          (click)="prev()">
+  </button>
+  
+  <div class="carousel-wrapper">
+    <ul class="carousel-inner-custom" #carousel>
+      <li *ngFor="let item of items;" class="carousel-item-directive">
+        <ng-container [ngTemplateOutlet]="item.tpl"></ng-container>
+      </li>
+    </ul>
+  </div>
+  
+  <button class="carousel__button--next"
+          (click)="next()">
+  </button>
+</div>
+
