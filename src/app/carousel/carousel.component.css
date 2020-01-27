@@ -20,8 +20,8 @@ ul {
   margin: 10px;
 }
 
-.carousel__button--prev,
-.carousel__button--next {
+.carousel-button--prev,
+.carousel-button--next {
   margin: 10px;
   top:50%;
   width: 3rem;
@@ -34,16 +34,16 @@ ul {
   border:1px solid black;
 }
 
-.carousel__button--prev {
+.carousel-button--prev {
   left:0;
 }
 
-.carousel__button--next {
+.carousel-button--next {
   right:0;
 }
 
-.carousel__button--prev::after,
-.carousel__button--next::after {
+.carousel-button--prev::after,
+.carousel-button--next::after {
   content: " ";
   position: absolute;
   width: 10px;
@@ -55,7 +55,7 @@ ul {
   transform: translate(-50%, -50%) rotate(135deg);
 }
 
-.carousel__button--next::after {
+.carousel-button--next::after {
   left: 47%;
   transform: translate(-50%, -50%) rotate(-45deg);
 }

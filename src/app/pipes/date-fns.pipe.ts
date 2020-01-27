@@ -9,7 +9,7 @@ export class DateFnsPipe implements PipeTransform {
 
   transform(date: number, mode: string): string {
     let formatMode =  DateMode[mode];
-    if (formatMode === undefined) {
+    if (!formatMode) {
       formatMode = mode;
     }
     return format(date, formatMode)
