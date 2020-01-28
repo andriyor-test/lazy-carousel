@@ -9,6 +9,7 @@ import { CarouselItemDirective } from './components/carousel/carousel-item.direc
 import { DateFnsPipe } from './pipes/date-fns.pipe';
 import { CarouselLazyComponent } from './components/carousel-lazy/carousel-lazy.component';
 import { LazyImageComponent } from './components/lazy-image/lazy-image.component';
+import { ImagePreloadDirective } from './components/lazy-image/lazy-image.directive';
 import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
@@ -18,6 +19,7 @@ import {HttpClientModule} from '@angular/common/http';
     CarouselComponent,
     CarouselItemDirective,
     CarouselItemElementDirective,
+    ImagePreloadDirective,
     DateFnsPipe,
     CarouselLazyComponent,
     LazyImageComponent
