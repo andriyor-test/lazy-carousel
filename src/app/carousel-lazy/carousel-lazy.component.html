@@ -6,13 +6,12 @@
   
   <div class="carousel-wrapper">
     <ul class="carousel-inner-custom" #carousel>
-      <li *ngFor="let item of items;" class="carousel-item-directive">
-          <div class="item-custom"
-               [style.background-image]="'url(' + item.src + ')'">
-            <div class="date-time">
-              {{ item.title | dateFns:item.mode }}
-            </div>
-          </div>
+      <li *ngFor="let item of items; let i = index" class="carousel-item-directive">
+        <app-lazy-image
+          [item]="item"
+          [isCurrent]="i === currentSlide"
+        >
+        </app-lazy-image>
       </li>
     </ul>
   </div>

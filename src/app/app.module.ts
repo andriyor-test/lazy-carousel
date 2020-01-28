@@ -8,10 +8,11 @@ import { CarouselComponent, CarouselItemElementDirective } from './carousel/caro
 import { CarouselItemDirective } from './carousel/carousel-item.directive';
 import { DateFnsPipe } from './pipes/date-fns.pipe';
 import { CarouselLazyComponent } from './carousel-lazy/carousel-lazy.component';
+import { LazyImageComponent } from './lazy-image/lazy-image.component';
 
 @NgModule({
   imports:      [ BrowserModule, BrowserAnimationsModule ],
-  declarations: [ AppComponent, CarouselComponent, CarouselItemDirective, CarouselItemElementDirective, DateFnsPipe, CarouselLazyComponent ],
+  declarations: [ AppComponent, CarouselComponent, CarouselItemDirective, CarouselItemElementDirective, DateFnsPipe, CarouselLazyComponent, LazyImageComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
