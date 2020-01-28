@@ -2,6 +2,7 @@ import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import { Item } from '../../models/item';
 import { DateMode } from '../../models/types';
 import {animate, AnimationBuilder, AnimationFactory, AnimationPlayer, style} from '@angular/animations';
+import {ImageService} from '../../services/image.service';
 
 @Component({
   selector: 'app-carousel-lazy',
@@ -12,11 +13,15 @@ export class CarouselLazyComponent implements OnInit {
   @Input() items: Item[];
   @ViewChild('carousel', { static: true }) private carousel: ElementRef;
   private currentSlide = 0;
+  private currentPage = 1;
   private player: AnimationPlayer;
   private itemWidth =  900;
   modeKeys = Object.keys(DateMode);
 
-  constructor(private builder: AnimationBuilder ) { }
+  constructor(
+    private builder: AnimationBuilder,
+    private imageService: ImageService
+  ) { }
 
   ngOnInit() {
   }
@@ -37,13 +42,12 @@ export class CarouselLazyComponent implements OnInit {
     if ( this.currentSlide + 1 === this.items.length ) { return; }
     this.currentSlide = (this.currentSlide + 1) % this.items.length;
 
-    const randomMode = this.modeKeys[Math.floor(Math.random() * this.modeKeys.length)];
-    const randomImageIndex = this.getRandomInt(1, 150);
-    this.items.push({
-      title: Date.now(),
-      mode: DateMode[randomMode],
-      src: `https://picsum.photos/id/${randomImageIndex}/900/500`
-    });
+    if (this.currentSlide % 9 === 0) {
+      this.currentPage += 1;
+      this.imageService.getImages(this.currentPage).subscribe(items => {
+        this.items = [...this.items, ...items];
+      });
+    }
 
     const offset = this.currentSlide * this.itemWidth;
     const myAnimation: AnimationFactory = this.buildAnimation(offset);
