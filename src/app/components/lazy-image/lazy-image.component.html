@@ -1,6 +1,4 @@
-<div class="item-custom"
-     [style.background-image]="isCurrent ? 'url(' + item.src + ')': 'url(' + placeholderURL + ')'">
-  <div class="date-time">
-    {{ item.title | dateFns:item.mode }}
-  </div>
+<div class="image-wrapper">
+  <img [src]="isCurrent? item.src: placeholderURL" alt="">
+  <div class="bottom-right">{{ item.title | dateFns:item.mode }}</div>
 </div>

@@ -1,19 +1,12 @@
-.item-custom {
-  padding: 0;
-  width: 900px;
-  height: 500px;
-  background-image: url("https://via.placeholder.com/900x500.png");
-  background-repeat: no-repeat;
-  color: #fff;
+.bottom-right {
+  position: absolute;
   font-size: 30px;
-  line-height: 300px;
+  bottom: 20px;
+  right: 20px;
+}
+
+.image-wrapper {
+  position: relative;
   text-align: center;
+  color: white;
 }
-
-.date-time {
-  text-align: right;
-  padding-top: 300px;
-  padding-right: 20px;
-  padding-left: 500px;
-}
-
