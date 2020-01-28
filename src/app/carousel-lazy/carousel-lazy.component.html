@@ -1,0 +1,24 @@
+<div class="carousel-custom">
+  <button class="carousel-button--prev"
+          (click)="prev()"
+  >
+  </button>
+  
+  <div class="carousel-wrapper">
+    <ul class="carousel-inner-custom" #carousel>
+      <li *ngFor="let item of items;" class="carousel-item-directive">
+          <div class="item-custom"
+               [style.background-image]="'url(' + item.src + ')'">
+            <div class="date-time">
+              {{ item.title | dateFns:item.mode }}
+            </div>
+          </div>
+      </li>
+    </ul>
+  </div>
+  
+  <button class="carousel-button--next"
+          (click)="next()"
+  >
+  </button>
+</div>

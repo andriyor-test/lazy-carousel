@@ -1,14 +1,20 @@
 <div style="margin: 2em" class="container">
-  <app-carousel-custom>
-    <ng-container *ngFor="let item of items;">
-      <ng-container *appCarouselItem>
-        <div class="item-custom" [attr.data-background]="item.src">
-          <div class="date-time">
-<!--            {{ item.title | date:item.mode }}-->
-            {{ item.title | dateFns:item.mode }}
-          </div>
-        </div>
-      </ng-container>
-    </ng-container>
-  </app-carousel-custom>
+<!--  <app-carousel-custom>-->
+<!--    <ng-container *ngFor="let item of items;">-->
+<!--      <ng-container *appCarouselItem>-->
+<!--        <div class="item-custom" [attr.data-background]="item.src">-->
+<!--          <div class="date-time">-->
+<!--&lt;!&ndash;            {{ item.title | date:item.mode }}&ndash;&gt;-->
+<!--            {{ item.title | dateFns:item.mode }}-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </ng-container>-->
+<!--    </ng-container>-->
+<!--  </app-carousel-custom>-->
+  
+  <app-carousel-lazy
+    [items]="items"
+  >
+  
+  </app-carousel-lazy>
 </div>
