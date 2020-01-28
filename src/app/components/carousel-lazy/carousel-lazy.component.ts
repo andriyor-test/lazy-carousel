@@ -1,6 +1,6 @@
 import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
-import { Item } from '../models/item';
-import { DateMode } from '../models/types';
+import { Item } from '../../models/item';
+import { DateMode } from '../../models/types';
 import {animate, AnimationBuilder, AnimationFactory, AnimationPlayer, style} from '@angular/animations';
 
 @Component({
@@ -14,6 +14,7 @@ export class CarouselLazyComponent implements OnInit {
   private currentSlide = 0;
   private player: AnimationPlayer;
   private itemWidth =  900;
+  modeKeys = Object.keys(DateMode);
 
   constructor(private builder: AnimationBuilder ) { }
 
@@ -36,8 +37,7 @@ export class CarouselLazyComponent implements OnInit {
     if ( this.currentSlide + 1 === this.items.length ) { return; }
     this.currentSlide = (this.currentSlide + 1) % this.items.length;
 
-    const modeKeys = Object.keys(DateMode);
-    const randomMode = modeKeys[Math.floor(Math.random() * modeKeys.length)];
+    const randomMode = this.modeKeys[Math.floor(Math.random() * this.modeKeys.length)];
     const randomImageIndex = this.getRandomInt(1, 150);
     this.items.push({
       title: Date.now(),
