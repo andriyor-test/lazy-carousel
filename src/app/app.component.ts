@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { items } from './items';
 import {Item} from './models/item'
 import {ImageService} from './services/image.service';
 
